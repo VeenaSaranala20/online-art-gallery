@@ -1,0 +1,19 @@
+<!-- upload_artwork.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Artwork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery/css/upload_styles.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="upload-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
